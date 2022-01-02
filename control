@@ -2,7 +2,8 @@ Package: org.excelcoin.phone.redirectvowifitweak
 Name: RedirectVoWiFiTweak
 Version: 0.0.1
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
+Description: Redirects the Wi-Fi Calling IKEv2/IPSec tunnel to your own server with your own PSK key instead of SIM card auth.
+Homepage: https://worthdoingbadly.com/vowifi2/
 Maintainer: Zhuowei Zhang
 Author: Zhuowei Zhang
 Section: Tweaks
