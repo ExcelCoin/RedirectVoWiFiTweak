@@ -9,5 +9,3 @@ TLDR:
 - set up Theos
 - edit Tweak.x with your ePDG VPN address, username, and shared secret (pre-shared key)
 - make package install
-- ssh into your device
-- `launchctl stop com.apple.CommCenter`
