@@ -3,48 +3,17 @@
 #import <Foundation/NSUserDefaults+Private.h>
 @import NetworkExtension;
 
+// config
+
 static const bool kLogging = true;
 
-static NSString *nsDomainString = @"org.excelcoin.phone.redirectvowifitweak";
-static NSString *nsNotificationString =
-    @"org.excelcoin.phone.redirectvowifitweak/preferences.changed";
-static BOOL enabled;
+static BOOL enabled = true;
 
-static NSString *gHostname;
-static NSString *gUsername;
-static NSString *gSharedSecret;
+static NSString *gHostname = @"192.168.1.13";
+static NSString *gUsername = @"iphone";
+static NSString *gSharedSecret = @"aaaaabbbbbcccccddddd";
 
-static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name,
-                                 const void *object, CFDictionaryRef userInfo) {
-  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-  NSNumber *enabledValue = (NSNumber *)[userDefaults objectForKey:@"enabled"
-                                                         inDomain:nsDomainString];
-  enabled = (enabledValue) ? [enabledValue boolValue] : YES;
-  gHostname = (NSString *)[userDefaults objectForKey:@"hostname" inDomain:nsDomainString];
-  if (!gHostname) {
-    gHostname = @"192.168.1.13";
-  }
-  gUsername = (NSString *)[userDefaults objectForKey:@"username" inDomain:nsDomainString];
-  if (!gUsername) {
-    gUsername = @"iphone";
-  }
-  gSharedSecret = (NSString *)[userDefaults objectForKey:@"sharedSecret" inDomain:nsDomainString];
-  if (!gSharedSecret) {
-    gSharedSecret = @"aaaaabbbbbcccccddddd";
-  }
-}
-
-%ctor {
-  // Set variables on start up
-  notificationCallback(NULL, NULL, NULL, NULL, NULL);
-
-  // Register for 'PostNotification' notifications
-  CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL,
-                                  notificationCallback, (CFStringRef)nsNotificationString, NULL,
-                                  CFNotificationSuspensionBehaviorCoalesce);
-
-  // Add any personal initializations
-}
+// end config
 
 struct NEVirtualInterface_s;
 

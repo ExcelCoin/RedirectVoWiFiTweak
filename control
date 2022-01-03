@@ -7,4 +7,4 @@ Homepage: https://worthdoingbadly.com/vowifi2/
 Maintainer: Zhuowei Zhang
 Author: Zhuowei Zhang
 Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.3)
+Depends: mobilesubstrate (>= 0.9.5000)
