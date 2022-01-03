@@ -5,6 +5,8 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = RedirectVoWiFiTweak
 
+INSTALL_TARGET_PROCESSES=CommCenter
+
 RedirectVoWiFiTweak_FILES = Tweak.x
 RedirectVoWiFiTweak_CFLAGS = -fobjc-arc
 
